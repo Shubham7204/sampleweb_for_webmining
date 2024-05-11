@@ -2,34 +2,35 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-# URL of the webpage
-url = "http://127.0.0.1:5500/index.html"
-
-# Send a GET request to the webpage
+# Send a GET request to the URL
+url = 'https://shubham7204.github.io/sampleweb_for_webmining/'
 response = requests.get(url)
 
 # Parse the HTML content
 soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find all product cards
-product_cards = soup.find_all(class_='card')
+cards = soup.find_all('div', class_='card')
 
-# Create a list to store the data
+# Initialize a list to store the data
 data = []
 
-# Iterate over each product card and extract information
-for card in product_cards:
-    title = card.find(class_='card-title').text.strip()
-    description = card.find(class_='card-text').text.strip()
-    # Extracting the price
-    price = card.find_all(
-        'p', class_='card-text')[1].text.strip().split(':')[1].strip()
-    data.append([title, description, price])
+# Iterate over each card and extract information
+for card in cards:
+    title = card.find('h5', class_='card-title').text.strip()
+    description = card.find('p', class_='card-text').text.strip()
+    price = card.find(
+        'p', class_='card-text').find_next_sibling('p').text.strip().split(':')[1].strip()
+    img_url = card.find('img', class_='card-img-top')['src']
+    data.append([title, description, price, img_url])
 
-# Save data to CSV
-with open('products.csv', 'w', newline='', encoding='utf-8') as csvfile:
+# Define the CSV filename
+filename = 'product_data.csv'
+
+# Write the data to a CSV file
+with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Title', 'Description', 'Price'])  # Write header
-    writer.writerows(data)  # Write data rows
+    writer.writerow(['Title', 'Description', 'Price', 'Image URL'])
+    writer.writerows(data)
 
-print("Data saved to products.csv")
+print(f'Data has been scraped and saved to {filename}')
