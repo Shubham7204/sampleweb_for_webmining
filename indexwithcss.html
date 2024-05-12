@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Listing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+      .card {
+        width: 250px;
+        margin: 10px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .description {
+        font-size: 14px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .price {
+        font-weight: bold;
+        color: #00f;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Product Listing</h1>
+    </header>
+    <div class="container">
+      <div class="card">
+        <img src="https://source.unsplash.com/150x150/?Laptop" alt="Laptop" />
+        <div class="title">Laptop</div>
+        <div class="description">
+          High-performance laptop with sleek design.
+        </div>
+        <div class="price">$800</div>
+      </div>
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/150x150/?Smartphone"
+          alt="Smartphone"
+        />
+        <div class="title">Smartphone</div>
+        <div class="description">Latest smartphone with amazing features.</div>
+        <div class="price">$600</div>
+      </div>
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/150x150/?Headphones"
+          alt="Headphones"
+        />
+        <div class="title">Headphones</div>
+        <div class="description">
+          Premium quality headphones for immersive sound experience.
+        </div>
+        <div class="price">$200</div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/150x150/?Tablet" alt="Tablet" />
+        <div class="title">Tablet</div>
+        <div class="description">Portable tablet with long battery life.</div>
+        <div class="price">$400</div>
+      </div>
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/150x150/?Smartwatch"
+          alt="Smartwatch"
+        />
+        <div class="title">Smartwatch</div>
+        <div class="description">
+          Smartwatch with fitness tracking and heart rate monitoring.
+        </div>
+        <div class="price">$300</div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/150x150/?Camera" alt="Camera" />
+        <div class="title">Camera</div>
+        <div class="description">
+          Professional camera with high-quality image capture.
+        </div>
+        <div class="price">$1000</div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/150x150/?Printer" alt="Printer" />
+        <div class="title">Printer</div>
+        <div class="description">
+          Wireless printer for easy printing and scanning.
+        </div>
+        <div class="price">$150</div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/150x150/?Monitor" alt="Monitor" />
+        <div class="title">Monitor</div>
+        <div class="description">
+          High-resolution monitor for clear display.
+        </div>
+        <div class="price">$300</div>
+      </div>
+    </div>
+  </body>
+</html>
